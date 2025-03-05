@@ -1,18 +1,8 @@
 import axios from "axios";
-const local = "http://localhost:5000";
-const production = "https://test11-liard-xi.vercel.app";
+const production_api = "https://test11-liard-xi.vercel.app";
 
-let api_url = "";
-let mode = "pro";
-if (mode === "pro") {
-  api_url = production;
-} else {
-  api_url = local;
-}
 const api = axios.create({
-  baseURL: `${api_url}/api`,
+  baseURL: production_api,
   withCredentials: true,
 });
-
 export default api;
-
